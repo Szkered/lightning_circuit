@@ -1,23 +1,23 @@
-This simple SNARK application was made in response to a lightning-dev forum post, https://lists.linuxfoundation.org/pipermail/lightning-dev/2015-November/000309.html where AJ Towns suggested using SNARKs to implement a variant of the lightning protocol. The exact application doesn't matter too much, but in the thread there was an initial attempt at benchmarking, which seemed to suggest ridiculous numbers, like 100+MB for a proof about a single hash. So, this project was made to set the record straight about what performance could be expected.
 
 This is a SNARK implementation using libsnark for the following:
 
-``ZkPoK{ (R1, R2): H1 = sha256(R1) and H2 = sha256(R2) and R1 = R2 ^ X }``
+``ZkPoK{ (R1, R2, R3): Hi = sha256(Ri) and R3 = R1 + R2 }``
 
-Read: given `H1`, `H2`, and `X`, prove you know `R1` and `R2` such that `R1` is the preimage of `H1`,
-`R2` is the preimage of `H2`, and `R1` is `R2 xor X`.
+Read: given `H1`, `H2`, `H3`, prove you know `R1`, `R2`, `R3` such that `R1` is the preimage of `H1`, `R2` is the preimage of `H2`, `R3` is the preimage of `H3`, and `R3` is `R1 + R2`.
+
+Code based on <https://github.com/ebfull/lightning_circuit>.
 
 ## performance
 
-on my computer (Intel(R) Core(TM) i7-3770S CPU @ 3.10GHz):
+on my computer (MacBook Pro Early 2015):
 
-* **key generation time**: 11.6551s
-* **proof generation time**: 3.0884s
-* **verification time**: 0.0262s
+* **key generation time**: 22.1s
+* **proof generation time**: 5.14s
+* **verification time**: 0.1445ss
 * **proof size**: 2294 bits
-* **proving key size**: 102284136 bits
+* **proving key size**: 153200114 bits
 * **verifying key size**: 4586 bits
-* **R1CS constraints**: 56101 (mostly sha256-related)
+* **R1CS constraints**: 83766 (mostly sha256-related)
 
 ## howto
 
