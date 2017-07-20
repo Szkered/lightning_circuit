@@ -5,6 +5,8 @@ This is a SNARK implementation using libsnark for the following:
 
 Read: given `H1`, `H2`, `H3`, prove you know `R1`, `R2`, `R3` such that `R1` is the preimage of `H1`, `R2` is the preimage of `H2`, `R3` is the preimage of `H3`, and `R3` is `R1 + R2`.
 
+This is an implementation and benchmark of the "Receive" zk-SNARK in the Confidential Transaction scheme from this article: <https://media.consensys.net/introduction-to-zksnarks-with-examples-3283b554fc3b>.
+
 Code based on <https://github.com/ebfull/lightning_circuit>.
 
 ## performance
