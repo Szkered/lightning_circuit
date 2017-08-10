@@ -233,8 +233,8 @@ public:
             this->pb.add_r1cs_constraint(
                 r1cs_constraint<FieldT>(
                     { intermediate_val3[NN-1] },
-                    { 2 }, 
-                    { intermediate_val1[NN-1], intermediate_val3[NN-1]}), 
+                    { 1 }, 
+                    { intermediate_val1[NN-1], intermediate_val2[NN-1]}), 
                 FMT(this->annotation_prefix, "finalsum_%zu", 0));
         
 
