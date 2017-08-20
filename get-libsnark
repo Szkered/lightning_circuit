@@ -7,8 +7,6 @@
 
 set -e
 
-apt-get -y install build-essential git libgmp3-dev libprocps4-dev libgtest-dev python-markdown libboost-all-dev libssl-dev
-
 LIBSNARK_SRC=${LIBSNARK_SRC:-https://github.com/scipr-lab/libsnark}
 
 CURVE=${CURVE:-BN128}

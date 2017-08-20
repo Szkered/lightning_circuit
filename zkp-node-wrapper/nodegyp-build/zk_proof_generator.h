@@ -1,0 +1,1 @@
+void generate_proof(unsigned long* h1_ptr, unsigned long* h2_ptr, unsigned long* h3_ptr, unsigned long* r1_ptr, unsigned long* r2_ptr, unsigned long* r3_ptr);
